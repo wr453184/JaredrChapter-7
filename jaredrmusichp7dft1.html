@@ -86,6 +86,10 @@
       align-items: center;
     }
 
+    .hero--single {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
     .hero-title {
       font-size: clamp(2rem, 4vw, 2.75rem);
       font-weight: 800;
@@ -113,6 +117,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
+      margin-top: 0.75rem;
     }
 
     .btn {
@@ -142,7 +147,7 @@
     .btn-outline {
       border-color: #4b5563;
       color: #e5e7eb;
-      background: ł;
+      background: transparent;
     }
 
     .btn-outline:hover {
@@ -162,7 +167,19 @@
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
     }
 
+    /* Make the cover art fill the card */
+    .hero-cover-full {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
     .hero-art-inner {
+      position: relative;
+      z-index: 1;
       font-size: 0.85rem;
       opacity: 0.95;
     }
@@ -188,6 +205,16 @@
     .hero-meta {
       font-size: 0.8rem;
       opacity: 0.8;
+    }
+
+    /* Make clickable overlay box look nice */
+    .playboy-box {
+      display: block;
+      padding: 1rem 1.1rem;
+      border-radius: 1.25rem;
+      background: rgba(15, 23, 42, 0.78);
+      border: 1px solid rgba(249, 115, 22, 0.7);
+      backdrop-filter: blur(10px);
     }
 
     main {
@@ -250,11 +277,22 @@
       gap: 1.25rem;
     }
 
+    .card-link {
+      display: block;
+    }
+
     .card {
       border-radius: 1.2rem;
       border: 1px solid #111827;
       background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.15), #020617);
       padding: 1.25rem;
+      transition: transform 0.1s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.9);
+      border-color: #f97316;
     }
 
     .card-title {
@@ -274,28 +312,6 @@
     .card-body {
       font-size: 0.85rem;
       opacity: 0.9;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 0.75rem;
-    }
-
-    .gallery-item {
-      position: relative;
-      border-radius: 1rem;
-      overflow: hidden;
-      background: #020617;
-      border: 1px solid #111827;
-      padding: 3.5rem 0.75rem;
-      text-align: center;
-      font-size: 0.8rem;
-      opacity: 0.8;
-    }
-
-    .gallery-item span {
-      display: block;
     }
 
     .stats {
@@ -411,20 +427,23 @@
     </div>
   </nav>
 </header>
-  
-   <div class="hero-art">
-  <img src=2025251031_212650_Capcut.jpg" class="hero-cover-full" alt="Cover Art">
 
-  <div class="hero-art-inner">
-<a href="https://untd.io/m/golden-49" class="playboy-box">
-  <div class="hero-tag">Next Release</div>
-  <p class="hero-track">“Golden” – Coming soon</p>
-  <p class="hero-meta">Pre-Add it to Your Library or Playlist</p>
-</a>
+<!-- GOLDEN – NEXT RELEASE CARD -->
+<section class="hero hero--single">
+  <div class="hero-art">
+    <img src="2025251019_002946_Photos.jpg" class="hero-cover-full" alt="Golden Cover Art">
+
+    <div class="hero-art-inner">
+      <a href="https://untd.io/m/golden-49" class="playboy-box">
+        <div class="hero-tag">Next Release</div>
+        <p class="hero-track">“Golden” – Coming soon</p>
+        <p class="hero-meta">Pre-add it to your library or playlist</p>
+      </a>
+    </div>
   </div>
-</div>
 </section>
 
+<!-- MAIN HERO – ALBUM + PLAYBOY HEART -->
 <section class="hero">
   <div>
     <p class="hero-subtitle">R&amp;B POP · ARTIST · PRODUCER</p>
@@ -432,36 +451,36 @@
     <p class="hero-text">
       R&amp;B-leaning pop artist, writer, and producer from Virginia.  
       Over 100 tracks across major streaming platforms, blending intimate storytelling
-      with modern pop production.This album is the 7th studio album by Jared. Many Early 
-      Access fans say: Limerence Killed the Hopeless Romantic" is a masterpiece. Coming
+      with modern pop production. This album is the 7th studio album by Jared. Many early 
+      access fans say "Limerence Killed the Hopeless Romantic" is a masterpiece. Coming
       to all platforms and streaming this April 2026.
     </p>
     <div class="hero-buttons">
       <a href="#streaming" class="btn btn-primary">Listen on your platform</a>
-      <a href="https://untd.io/m/i-wanna-know-36"class="btn btn-outline">Pre-add next single (I wanna Know)</a>
+      <a href="https://untd.io/m/i-wanna-know-36" class="btn btn-outline">Pre-add next single (I Wanna Know)</a>
     </div>
   </div>
 
- <div class="hero-art">
-  <img src=2025251031_212650_Capcut.jpg" class="hero-cover-full" alt="Cover Art">
+  <div class="hero-art">
+    <img src="2025251031_212650_Capcut.jpg" class="hero-cover-full" alt="Playboy Heart Cover Art">
 
-  <div class="hero-art-inner">
-<a href="https://www.jaredrmusic.com/streaming" class="playboy-box">
-  <div class="hero-tag">New Release</div>
-  <p class="hero-track">“Playboy Heart” – Out Now</p>
-  <p class="hero-meta">Add it to Your Library or Playlist</p>
-</a>
+    <div class="hero-art-inner">
+      <a href="https://www.jaredrmusic.com/streaming" class="playboy-box">
+        <div class="hero-tag">New Release</div>
+        <p class="hero-track">“Playboy Heart” – Out Now</p>
+        <p class="hero-meta">Add it to your library or playlist</p>
+      </a>
+    </div>
   </div>
-</div>
 </section>
-  
- 
 
 <main>
   <!-- ABOUT -->
   <section id="about" class="section">
     <div class="section-header">
-      <h2 class="section-title">Limerence Killed the Hopeless Romantic (April 2026)(Deluxe: June 8, 2026)</h2>
+      <h2 class="section-title">
+        Limerence Killed the Hopeless Romantic (April 2026) (Deluxe: June 8, 2026)
+      </h2>
       <p class="section-sub">Artist · Writer · Producer</p>
     </div>
 
@@ -469,9 +488,9 @@
       <div>
         <p>
           The R&amp;B-inspired pop artist, producer, and songwriter from
-          Virgina brings his late-night piano sessions and guitar skills to build an album of what may be 
-          the best tracks hes ever created. From honest lyrics and vibe-heavy melodies to his extensive set
-          of vocals and top of the line adlibs, we know this album is gonna be great. This the 7th studio
+          Virginia brings his late-night piano sessions and guitar skills to build an album of what may be 
+          the best tracks he's ever created. From honest lyrics and vibe-heavy melodies to his extensive set
+          of vocals and top-of-the-line adlibs, we know this album is gonna be great. This is the 7th studio
           album by Jared.
         </p>
       </div>
@@ -486,15 +505,15 @@
 
         <div class="stats">
           <div class="stat">
-            <div class="stat-number">17/25(DX)</div>
+            <div class="stat-number">17 / 25 (DX)</div>
             <div class="stat-label">Tracks on Album</div>
           </div>
           <div class="stat">
-            <div class="stat-number">April 6, 2026/June 8, 2026 (DX)</div>
-            <div class="stat-label">Album Release Date</div>
+            <div class="stat-number">Apr 6, 2026 / Jun 8, 2026 (DX)</div>
+            <div class="stat-label">Album Release Dates</div>
           </div>
           <div class="stat">
-            <div class="stat-number">56m/1h 24m (DX)</div>
+            <div class="stat-number">56m / 1h 24m (DX)</div>
             <div class="stat-label">Run-Time</div>
           </div>
         </div>
@@ -502,49 +521,47 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="streaming" class="section">
+  <!-- MORE FOR FANS (Services) -->
+  <section id="services" class="section">
     <div class="section-header">
       <h2 class="section-title">More for fans</h2>
-      <p class="section-sub">Fans and Followers cards</p>
+      <p class="section-sub">Fans and followers cards</p>
     </div>
-  <div class="cards">
 
-  <a href="https://linkfly.to/70613SQKUei" class="card-link">
-    <article class="card">
-      <div class="card-tag">Live</div>
-      <h3 class="card-title">Artist Sets &amp; Events</h3>
-      <p class="card-body">
-        High-energy sets for clubs, showcases, private events, and festivals.
-        Custom set lists tailored to your audience and venue.
-      </p>
-    </article>
-  </a>
-  </div>
+    <div class="cards">
+      <a href="https://linkfly.to/70613SQKUei" class="card-link">
+        <article class="card">
+          <div class="card-tag">Live</div>
+          <h3 class="card-title">Artist Sets &amp; Events</h3>
+          <p class="card-body">
+            High-energy sets for clubs, showcases, private events, and festivals.
+            Custom set lists tailored to your audience and venue.
+          </p>
+        </article>
+      </a>
 
-  <a href="https://msha.ke/morejaredr" class="card-link">
-    <article class="card">
-      <div class="card-tag">Full Song List</div>
-      <h3 class="card-title">List of all songs from the upcoming album</h3>
-      <p class="card-body">
-        click this card to view all songs on the upcoming album.
-      </p>
-    </article>
-  </a>
-  </div>
+      <a href="https://msha.ke/morejaredr" class="card-link">
+        <article class="card">
+          <div class="card-tag">Full Song List</div>
+          <h3 class="card-title">All songs from the upcoming album</h3>
+          <p class="card-body">
+            Click this card to view all the songs on the upcoming album.
+          </p>
+        </article>
+      </a>
 
-  <a href="https://www.instagram.com/jared_r_music?igsh=MTUwbG1hNGJwZnVkYw==" class="card-link">
-    <article class="card">
-      <div class="card-tag">Instagram</div>
-      <h3 class="card-title">Follow &amp; stay updated!</h3>
-      <p class="card-body">
-        Follow Jared R on instagram to get the best post, stories
-        and updates about upcoming releases as a new fan!
-      </p>
-    </article>
-  </a>
-
-</div>
+      <a href="https://www.instagram.com/jared_r_music?igsh=MTUwbG1hNGJwZnVkYw==" class="card-link">
+        <article class="card">
+          <div class="card-tag">Instagram</div>
+          <h3 class="card-title">Follow &amp; stay updated!</h3>
+          <p class="card-body">
+            Follow Jared R on Instagram to get the best posts, stories,
+            and updates about upcoming releases as a new fan!
+          </p>
+        </article>
+      </a>
+    </div>
+  </section>
 
   <!-- STREAMING -->
   <section id="streaming" class="section">
@@ -559,53 +576,54 @@
 
     <div class="social-row" style="margin-top: 1rem;">
       <a class="social-pill" href="https://open.spotify.com/artist/0e0DfJrsP6wazDczmlt523?si=OpxxVbVMRNe_RJmYXNMCtQ" target="_blank" rel="noreferrer">Spotify Music</a>
-      <a class="social-pill" href="https://music.apple.com/us/artist/jared-r/1747341468?ls" target="_blank"target="_blank" rel="noreferrer">Apple Music</a>
-      <a class="social-pill" href="https://youtube.com/@officialjaredr?si=Lmp_mzWVa5tDV6z9"target="_blank" rel="noreferrer">YouTube Music</a>
-      <a class="social-pill" href=" https://music.amazon.com/artists/B0B6QT5R4X?ref=dm_sh_nGnjnX3XqVuH4GaYoEzwPNCO8 
-" target="_blank" rel="noreferrer">Amazon Music</a>
+      <a class="social-pill" href="https://music.apple.com/us/artist/jared-r/1747341468?ls" target="_blank" rel="noreferrer">Apple Music</a>
+      <a class="social-pill" href="https://youtube.com/@officialjaredr?si=Lmp_mzWVa5tDV6z9" target="_blank" rel="noreferrer">YouTube Music</a>
+      <a class="social-pill" href="https://music.amazon.com/artists/B0B6QT5R4X?ref=dm_sh_nGnjnX3XqVuH4GaYoEzwPNCO8" target="_blank" rel="noreferrer">Amazon Music</a>
     </div>
+  </section>
 
-  <!-- TESTIMONIALS / FEATURES -->
-    <section id="Streaming" class="section">
+  <!-- SUPER FANS (Testimonials) -->
+  <section id="testimonials" class="section">
     <div class="section-header">
       <h2 class="section-title">Super Fans</h2>
       <p class="section-sub">Are you one yet?</p>
     </div>
-    
-<a href="mailto:Ameliaannethomas@gmail.com?subject=Fanclub%20Inquiry" class="card-link">
-  <article class="card">
-    <div class="card-tag">Joining the Fanclub</div>
-    <h3 class="card-title">Contact President</h3>
-    <p class="card-body">
-      Click to email the Fanclub President directly.
-    </p>
-  </article>
-</a>
 
-    <a>
-    <article class="card">
-      <div class="card-tag">Are you a Superfan?</div>
-      <h3 class="card-title">Question: How many people has Jared written songs about?  </h3>
-      <p class="card-body">
-        Go to the contact box, enter your information,
-        and submit your answer in the message box as "answer:example"
-      </p>
-    </article>
-  </a>
-        <div class="hero-buttons">
+    <div class="cards">
+      <a href="mailto:Ameliaannethomas@gmail.com?subject=Fanclub%20Inquiry" class="card-link">
+        <article class="card">
+          <div class="card-tag">Joining the Fanclub</div>
+          <h3 class="card-title">Contact President</h3>
+          <p class="card-body">
+            Click to email the Fanclub President directly.
+          </p>
+        </article>
+      </a>
+
+      <article class="card">
+        <div class="card-tag">Are you a Superfan?</div>
+        <h3 class="card-title">Question: How many people has Jared written songs about?</h3>
+        <p class="card-body">
+          Go to the contact box, enter your information,
+          and submit your answer in the message box as <strong>"answer: your answer"</strong>.
+        </p>
+      </article>
+
+      <a href="https://laylo.com/jaredrmusiclinks" class="card-link">
+        <article class="card">
+          <div class="card-tag">Chapter 7 Drops on Laylo</div>
+          <h3 class="card-title">Subscribe to My Laylo</h3>
+          <p class="card-body">
+            Get notified about event news, event tickets, and pre-adds by message.
+          </p>
+        </article>
+      </a>
+    </div>
+
+    <div class="hero-buttons" style="margin-top: 1.5rem;">
       <a href="#contact" class="btn btn-primary">Answer the question!</a>
-
-  <a href="https://laylo.com/jaredrmusiclinks" class="card-link">
-    <article class="card">
-      <div class="card-tag">Chapter 7 Drops on Laylo</div>
-      <h3 class="card-title">Subscribe to My Laylo</h3>
-      <p class="card-body">
-        Get Notified: Event News, Event Tickets, and Preadds by message.
-      </p>
-    </article>
-  </a>
-
-</div>
+    </div>
+  </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section">
@@ -623,7 +641,7 @@
 
         <div style="margin-top: 1rem; font-size: 0.9rem;">
           <p>Email: <a href="mailto:jaredrudicil@yahoo.com">jaredrudicil@yahoo.com</a></p>
-          <p style="margin-top: 0.25rem;">City: Chesterfield,VA</p>
+          <p style="margin-top: 0.25rem;">City: Chesterfield, VA</p>
         </div>
       </div>
 
