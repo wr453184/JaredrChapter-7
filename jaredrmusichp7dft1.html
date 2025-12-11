@@ -16,14 +16,12 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
-      background: #050608;
+      /* OPTION B — Dark Neon Purple (background only) */
+      background: radial-gradient(circle at top, #ff2bd4, #61009c 45%, #1b002a 100%);
       color: #f8fafc;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     header {
       position: sticky;
@@ -43,372 +41,154 @@
       padding: 0.75rem 1rem;
     }
 
-    .nav-logo {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
+    .nav-logo { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; }
 
-    .nav-links {
-      display: flex;
-      gap: 1.25rem;
-      font-size: 0.9rem;
-    }
+    .nav-links { display: flex; gap: 1.25rem; font-size: 0.9rem; }
 
-    .nav-links a {
-      position: relative;
-      padding-bottom: 2px;
-    }
-
+    .nav-links a { position: relative; padding-bottom: 2px; }
     .nav-links a::after {
       content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: #f97316;
-      transition: width 0.2s ease;
+      position: absolute; left: 0; bottom: 0; width: 0; height: 2px;
+      background: #f97316; transition: width 0.2s ease;
     }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+    .nav-links a:hover::after { width: 100%; }
 
     .hero {
-      max-width: 1100px;
-      margin: 2.5rem auto 3rem;
-      padding: 0 1rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-      gap: 2.5rem;
-      align-items: center;
+      max-width: 1100px; margin: 2.5rem auto 3rem; padding: 0 1rem;
+      display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 2.5rem; align-items: center;
     }
-
-    .hero--single {
-      grid-template-columns: minmax(0, 1fr);
-    }
+    .hero--single { grid-template-columns: minmax(0, 1fr); }
 
     .hero-title {
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800;
+      letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem;
     }
-
     .hero-subtitle {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 1.25rem;
+      font-size: 0.95rem; opacity: 0.85; text-transform: uppercase;
+      letter-spacing: 0.18em; margin-bottom: 1.25rem;
     }
+    .hero-text { font-size: 0.98rem; color: #e5e7eb; max-width: 34rem; margin-bottom: 1.75rem; }
 
-    .hero-text {
-      font-size: 0.98rem;
-      color: #e5e7eb;
-      max-width: 34rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.75rem;
-    }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.75rem; }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.6rem 1.4rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      border: 1px solid transparent;
-      cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.6rem 1.4rem; border-radius: 999px; font-size: 0.9rem;
+      border: 1px solid transparent; cursor: pointer;
       transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
     }
-
     .btn-primary {
       background: linear-gradient(135deg, #f97316, #fb7185);
-      color: #0b0f19;
-      font-weight: 600;
-      box-shadow: 0 10px 30px rgba(248, 113, 113, 0.3);
+      color: #0b0f19; font-weight: 600; box-shadow: 0 10px 30px rgba(248, 113, 113, 0.3);
     }
+    .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 16px 36px rgba(248, 113, 113, 0.4); }
+    .btn-outline { border-color: #4b5563; color: #e5e7eb; background: transparent; }
+    .btn-outline:hover { background: #111827; }
 
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 36px rgba(248, 113, 113, 0.4);
-    }
-
-    .btn-outline {
-      border-color: #4b5563;
-      color: #e5e7eb;
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: #111827;
-    }
-
+    /* Hero card */
     .hero-art {
-      position: relative;
-      aspect-ratio: 4 / 5;
-      border-radius: 1.75rem;
-      overflow: hidden;
-      background: radial-gradient(circle at 0 0, #fb7185, #111827 45%, #020617 100%);
-      display: flex;
-      align-items: flex-end;
-      padding: 1.5rem;
-      border: 1px solid #1f2937;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      position: relative; aspect-ratio: 4 / 5; border-radius: 1.75rem; overflow: hidden;
+      display: flex; align-items: flex-end; padding: 1.5rem;
+      border: 1px solid #1f2937; box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      background-size: cover; background-position: center;
+      /* keep subtle base if image doesn't load */
+      background-color: #0b0f19;
     }
 
-    /* Make the cover art fill the card */
-    .hero-cover-full {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
+    /* GOLDEN background */
+    .hero-art--golden {
+      background-image:
+        linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.3)),
+        url("https://drive.google.com/uc?export=view&id=1G7OhuFggbQ2JLJgg7hPu-ruP0Vrm8_Q5");
     }
 
-    .hero-art-inner {
-      position: relative;
-      z-index: 1;
-      font-size: 0.85rem;
-      opacity: 0.95;
+    /* PLAYBOY HEART background */
+    .hero-art--playboy {
+      background-image:
+        linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.3)),
+        url("https://drive.google.com/uc?export=view&id=1za55llKtvRiXVBzQ6JFuBcjj8s7vOHBm");
     }
+
+    .hero-art-inner { position: relative; z-index: 1; font-size: 0.85rem; opacity: 0.95; }
 
     .hero-tag {
-      display: inline-flex;
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(249, 115, 22, 0.7);
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 0.8rem;
+      display: inline-flex; padding: 0.25rem 0.75rem; border-radius: 999px;
+      background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(249, 115, 22, 0.7);
+      font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8rem;
     }
+    .hero-track { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .hero-meta { font-size: 0.8rem; opacity: 0.8; }
 
-    .hero-track {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-    }
-
-    .hero-meta {
-      font-size: 0.8rem;
-      opacity: 0.8;
-    }
-
-    /* Make clickable overlay box look nice */
     .playboy-box {
-      display: block;
-      padding: 1rem 1.1rem;
-      border-radius: 1.25rem;
-      background: rgba(15, 23, 42, 0.78);
-      border: 1px solid rgba(249, 115, 22, 0.7);
+      display: block; padding: 1rem 1.1rem; border-radius: 1.25rem;
+      background: rgba(15, 23, 42, 0.78); border: 1px solid rgba(249, 115, 22, 0.7);
       backdrop-filter: blur(10px);
     }
 
-    main {
-      background: radial-gradient(circle at top, #111827, #020617 55%);
-      border-top: 1px solid #111827;
-    }
+    /* Keep section styling as before (background only changed on <body>) */
+    main { background: radial-gradient(circle at top, #111827, #020617 55%); border-top: 1px solid #111827; }
 
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2.75rem 1rem;
-      border-bottom: 1px solid #111827;
-    }
+    .section { max-width: 1100px; margin: 0 auto; padding: 2.75rem 1rem; border-bottom: 1px solid #111827; }
 
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1.75rem;
-    }
+    .section-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.75rem; }
 
-    .section-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
+    .section-title { font-size: 1.2rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+    .section-sub { font-size: 0.85rem; opacity: 0.6; }
 
-    .section-sub {
-      font-size: 0.85rem;
-      opacity: 0.6;
-    }
+    .two-col { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem; font-size: 0.95rem; color: #e5e7eb; }
 
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2rem;
-      font-size: 0.95rem;
-      color: #e5e7eb;
-    }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+    .pill { font-size: 0.75rem; padding: 0.15rem 0.6rem; border-radius: 999px; border: 1px solid #374151; color: #d1d5db; }
 
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.75rem;
-    }
-
-    .pill {
-      font-size: 0.75rem;
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid #374151;
-      color: #d1d5db;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .card-link {
-      display: block;
-    }
-
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+    .card-link { display: block; }
     .card {
-      border-radius: 1.2rem;
-      border: 1px solid #111827;
+      border-radius: 1.2rem; border: 1px solid #111827;
       background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.15), #020617);
       padding: 1.25rem;
       transition: transform 0.1s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 16px 30px rgba(15, 23, 42, 0.9); border-color: #f97316; }
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.9);
-      border-color: #f97316;
-    }
+    .card-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .card-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.6; margin-bottom: 0.35rem; }
+    .card-body { font-size: 0.85rem; opacity: 0.9; }
 
-    .card-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-    }
+    .stats { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; font-size: 0.85rem; }
+    .stat { min-width: 110px; }
+    .stat-number { font-size: 1.2rem; font-weight: 700; }
+    .stat-label { opacity: 0.7; }
 
-    .card-tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      opacity: 0.6;
-      margin-bottom: 0.35rem;
-    }
+    .social-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.6rem; }
+    .social-pill { font-size: 0.8rem; padding: 0.35rem 0.85rem; border-radius: 999px; border: 1px solid #374151; opacity: 0.9; }
 
-    .card-body {
-      font-size: 0.85rem;
-      opacity: 0.9;
-    }
+    .contact-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 2rem; }
 
-    .stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-      font-size: 0.85rem;
-    }
+    form { display: grid; gap: 0.75rem; font-size: 0.85rem; }
+    label { font-size: 0.85rem; opacity: 0.85; }
 
-    .stat {
-      min-width: 110px;
+    input, textarea {
+      margin-top: 0.2rem; width: 100%; padding: 0.5rem 0.7rem; border-radius: 0.6rem;
+      border: 1px solid #1f2937; background: #020617; color: #e5e7eb; font-family: inherit; font-size: 0.9rem;
     }
+    textarea { min-height: 120px; resize: vertical; }
 
-    .stat-number {
-      font-size: 1.2rem;
-      font-weight: 700;
-    }
+    footer { padding: 1.75rem 1rem 2.25rem; font-size: 0.8rem; text-align: center; color: #e5e7eb; }
 
-    .stat-label {
-      opacity: 0.7;
+    /* Simple gallery placeholder */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; }
+    .gallery-item {
+      position: relative; border-radius: 1rem; overflow: hidden; background: #020617; border: 1px solid #111827;
+      padding: 3.5rem 0.75rem; text-align: center; font-size: 0.8rem; opacity: 0.8;
     }
-
-    .social-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 0.6rem;
-    }
-
-    .social-pill {
-      font-size: 0.8rem;
-      padding: 0.35rem 0.85rem;
-      border-radius: 999px;
-      border: 1px solid #374151;
-      opacity: 0.9;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2rem;
-    }
-
-    form {
-      display: grid;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-    }
-
-    label {
-      font-size: 0.85rem;
-      opacity: 0.85;
-    }
-
-    input,
-    textarea {
-      margin-top: 0.2rem;
-      width: 100%;
-      padding: 0.5rem 0.7rem;
-      border-radius: 0.6rem;
-      border: 1px solid #1f2937;
-      background: #020617;
-      color: #e5e7eb;
-      font-family: inherit;
-      font-size: 0.9rem;
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    footer {
-      padding: 1.75rem 1rem 2.25rem;
-      font-size: 0.8rem;
-      text-align: center;
-      color: #6b7280;
-    }
+    .gallery-item span { display: block; }
 
     @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-art {
-        order: -1;
-      }
-
-      .two-col,
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .nav-links {
-        display: none; /* simple mobile: hide links; could add a burger menu later */
-      }
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero-art { order: -1; }
+      .two-col, .contact-grid { grid-template-columns: minmax(0, 1fr); }
+      .nav-links { display: none; }
     }
   </style>
 </head>
@@ -430,9 +210,7 @@
 
 <!-- GOLDEN – NEXT RELEASE CARD -->
 <section class="hero hero--single">
-  <div class="hero-art">
-    <img src="2025251019_002946_Photos.jpg" class="hero-cover-full" alt="Golden Cover Art">
-
+  <div class="hero-art hero-art--golden">
     <div class="hero-art-inner">
       <a href="https://untd.io/m/golden-49" class="playboy-box">
         <div class="hero-tag">Next Release</div>
@@ -457,13 +235,13 @@
     </p>
     <div class="hero-buttons">
       <a href="#streaming" class="btn btn-primary">Listen on your platform</a>
-      <a href="https://untd.io/m/i-wanna-know-36" class="btn btn-outline">Pre-add next single (I Wanna Know)</a>
+      <a href="https://untd.io/m/i-wanna-know-36" class="btn btn-outline">
+        Pre-add next single (I Wanna Know)
+      </a>
     </div>
   </div>
 
-  <div class="hero-art">
-    <img src="2025251031_212650_Capcut.jpg" class="hero-cover-full" alt="Playboy Heart Cover Art">
-
+  <div class="hero-art hero-art--playboy">
     <div class="hero-art-inner">
       <a href="https://www.jaredrmusic.com/streaming" class="playboy-box">
         <div class="hero-tag">New Release</div>
@@ -521,7 +299,22 @@
     </div>
   </section>
 
-  <!-- MORE FOR FANS (Services) -->
+  <!-- GALLERY -->
+  <section id="gallery" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-sub">From studio nights to live shows</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item"><span>Studio session snapshots</span></div>
+      <div class="gallery-item"><span>Live performance highlights</span></div>
+      <div class="gallery-item"><span>Behind-the-scenes moments</span></div>
+      <div class="gallery-item"><span>Cover art concepts</span></div>
+    </div>
+  </section>
+
+  <!-- MORE FOR FANS -->
   <section id="services" class="section">
     <div class="section-header">
       <h2 class="section-title">More for fans</h2>
@@ -544,9 +337,7 @@
         <article class="card">
           <div class="card-tag">Full Song List</div>
           <h3 class="card-title">All songs from the upcoming album</h3>
-          <p class="card-body">
-            Click this card to view all the songs on the upcoming album.
-          </p>
+          <p class="card-body">Click this card to view all the songs on the upcoming album.</p>
         </article>
       </a>
 
@@ -555,8 +346,7 @@
           <div class="card-tag">Instagram</div>
           <h3 class="card-title">Follow &amp; stay updated!</h3>
           <p class="card-body">
-            Follow Jared R on Instagram to get the best posts, stories,
-            and updates about upcoming releases as a new fan!
+            Follow Jared R on Instagram to get the best posts, stories, and updates about upcoming releases!
           </p>
         </article>
       </a>
@@ -582,7 +372,7 @@
     </div>
   </section>
 
-  <!-- SUPER FANS (Testimonials) -->
+  <!-- SUPER FANS -->
   <section id="testimonials" class="section">
     <div class="section-header">
       <h2 class="section-title">Super Fans</h2>
@@ -594,9 +384,7 @@
         <article class="card">
           <div class="card-tag">Joining the Fanclub</div>
           <h3 class="card-title">Contact President</h3>
-          <p class="card-body">
-            Click to email the Fanclub President directly.
-          </p>
+          <p class="card-body">Click to email the Fanclub President directly.</p>
         </article>
       </a>
 
@@ -604,8 +392,8 @@
         <div class="card-tag">Are you a Superfan?</div>
         <h3 class="card-title">Question: How many people has Jared written songs about?</h3>
         <p class="card-body">
-          Go to the contact box, enter your information,
-          and submit your answer in the message box as <strong>"answer: your answer"</strong>.
+          Go to the contact box, enter your info, and submit your answer in the message box as
+          <strong>"answer: your answer"</strong>.
         </p>
       </article>
 
@@ -613,9 +401,7 @@
         <article class="card">
           <div class="card-tag">Chapter 7 Drops on Laylo</div>
           <h3 class="card-title">Subscribe to My Laylo</h3>
-          <p class="card-body">
-            Get notified about event news, event tickets, and pre-adds by message.
-          </p>
+          <p class="card-body">Get notified about event news, tickets, and pre-adds by message.</p>
         </article>
       </a>
     </div>
