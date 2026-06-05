@@ -1,38 +1,45 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chapter 8 — Mastering Elegance</title><style>
-* { margin:0; padding:0; box-sizing:border-box; }
+<title>Chapter 8 — Mastering Elegance</title>
 
-body {
-  font-family: system-ui, sans-serif;
-  background: radial-gradient(circle at top, #2b0000, #000 70%);
-  color: white;
-  overflow-x: hidden;
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* 🔴 ambient glow */
-body::before {
+body{
+  font-family:system-ui,sans-serif;
+  background:radial-gradient(circle at top,#2b0000,#000 70%);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Ambient Glow */
+body::before{
   content:"";
   position:fixed;
   width:200%;
   height:200%;
   top:-50%;
   left:-50%;
-  background: radial-gradient(circle, rgba(255,0,0,0.12), transparent 60%);
-  animation: glowMove 14s linear infinite;
+  background:radial-gradient(circle,rgba(255,0,0,0.12),transparent 60%);
+  animation:glowMove 14s linear infinite;
   z-index:-1;
 }
 
-@keyframes glowMove {
-  0% { transform:translate(0,0); }
-  50% { transform:translate(8%,8%); }
-  100% { transform:translate(0,0); }
+@keyframes glowMove{
+  0%{transform:translate(0,0);}
+  50%{transform:translate(8%,8%);}
+  100%{transform:translate(0,0);}
 }
 
 /* NAV */
-header {
+header{
   position:sticky;
   top:0;
   background:rgba(0,0,0,0.9);
@@ -41,7 +48,7 @@ header {
   z-index:10;
 }
 
-.nav {
+.nav{
   max-width:1100px;
   margin:auto;
   display:flex;
@@ -51,7 +58,7 @@ header {
 }
 
 /* HERO */
-.hero {
+.hero{
   max-width:1100px;
   margin:3rem auto;
   padding:0 1rem;
@@ -61,27 +68,27 @@ header {
   align-items:center;
 }
 
-.hero-sub {
+.hero-sub{
   letter-spacing:0.2em;
   opacity:0.6;
   margin-bottom:1rem;
 }
 
-.hero-title {
+.hero-title{
   font-size:clamp(2.2rem,4vw,3rem);
   font-weight:800;
   text-transform:uppercase;
   line-height:1.1;
 }
 
-.hero-text {
+.hero-text{
   margin:1rem 0;
   color:#ccc;
   max-width:30rem;
 }
 
 /* BUTTON */
-.btn {
+.btn{
   padding:0.65rem 1.5rem;
   border-radius:999px;
   border:none;
@@ -92,13 +99,13 @@ header {
   transition:0.2s;
 }
 
-.btn:hover {
+.btn:hover{
   transform:scale(1.05);
   box-shadow:0 0 30px rgba(255,0,0,0.7);
 }
 
 /* COVER */
-.cover {
+.cover{
   aspect-ratio:4/5;
   border-radius:1.5rem;
   overflow:hidden;
@@ -108,50 +115,56 @@ header {
   transition:0.4s;
 }
 
-.cover:hover {
+.cover:hover{
   transform:scale(1.04);
   box-shadow:0 0 45px rgba(255,0,0,0.6);
 }
 
-.cover::after {
+.cover::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
 }
 
-.cover-info {
+.cover-info{
   position:absolute;
   bottom:1rem;
   left:1rem;
   z-index:2;
 }
 
-/* AUDIO */
-.audio-box {
-  margin-top:1rem;
-  padding:1rem;
-  background:rgba(0,0,0,0.6);
-  border-radius:1rem;
-  border:1px solid rgba(255,0,0,0.3);
-}
-
 /* SECTIONS */
-.section {
+.section{
   max-width:1100px;
   margin:auto;
   padding:2.5rem 1rem;
   border-bottom:1px solid #111;
 }
 
-.section-title {
+.section-title{
   text-transform:uppercase;
   margin-bottom:1rem;
   font-size:1.1rem;
 }
 
+/* COUNTDOWN */
+.countdown-box{
+  margin-top:1rem;
+  padding:1.5rem;
+  text-align:center;
+  font-size:clamp(1.8rem,4vw,3rem);
+  font-weight:800;
+  border-radius:1rem;
+  background:rgba(255,0,0,0.08);
+  border:1px solid rgba(255,0,0,0.25);
+  box-shadow:0 0 25px rgba(255,0,0,0.15);
+  color:#ff5c75;
+  letter-spacing:0.05em;
+}
+
 /* THOUGHTS */
-.thought {
+.thought{
   opacity:0;
   transform:translateY(20px);
   transition:0.6s;
@@ -160,18 +173,18 @@ header {
   color:#ff9aa2;
 }
 
-.thought.show {
+.thought.show{
   opacity:1;
   transform:translateY(0);
 }
 
-/* FAN MESSAGES */
-.fans {
+/* FAN REACTIONS */
+.fans{
   display:grid;
   gap:1rem;
 }
 
-.fan {
+.fan{
   padding:1rem;
   background:#020617;
   border-radius:1rem;
@@ -182,13 +195,13 @@ header {
   transition:0.6s;
 }
 
-.fan.show {
+.fan.show{
   opacity:1;
   transform:translateY(0);
 }
 
 /* FOOTER */
-footer {
+footer{
   text-align:center;
   padding:2rem;
   opacity:0.6;
@@ -196,77 +209,236 @@ footer {
 }
 
 /* MOBILE */
-@media (max-width:768px){
-  .hero { grid-template-columns:1fr; }
+@media(max-width:768px){
+  .hero{
+    grid-template-columns:1fr;
+  }
 }
-</style></head><body><header>
+</style>
+</head>
+
+<body>
+
+<header>
   <div class="nav">
-    <div>CHAPTER 8 (Starting soon)</div>
+    <div>CHAPTER 8 (Starting Soon)</div>
     <div>06.08.26 → 10.08.26</div>
   </div>
-</header><section class="hero">
+</header>
+
+<section class="hero">
+
   <div>
-    <p class="hero-sub">R&B POP · ARTIST/PRODUCER • Limerence (THE JEALOUSY ERA [Part 2])</p><h1 class="hero-title">
-  Mastering Elegance,<br>
-  Generosity & Negotiation (Part 2)
-</h1>
 
-<p class="hero-text">
-  Mastering Elegance Generosity And Negotiation 
-  had the best songs when it came to limerence.
-  The album was 13 songs long and the lead single
-  was "Arizona". The most streamed song on the album
-  was "obsessed with you". The album was made red
-  because Jared wrote the entire album "seeing red".
-  The album follows the Jealous mindset of a very
-  angry Jared. Writing about the one of a kind iconic
-  girl herself. The album wasnt supposed to have a
-  sequel, but due to its success, The 15 song Part 2 
-  is in creation!
-</p>
+    <p class="hero-sub">
+      R&B POP · ARTIST/PRODUCER • Limerence (THE JEALOUSY ERA [Part 2])
+    </p>
 
-<button class="btn" onclick="playAudio()">Preview “ear to ear”</button>
+    <h1 class="hero-title">
+      Mastering Elegance,<br>
+      Generosity & Negotiation (Part 2)
+    </h1>
 
-  </div>  <div class="cover" style="background-image:url('YOUR_IMAGE_URL_HERE');">
+    <p class="hero-text">
+      Mastering Elegance Generosity And Negotiation had the best songs
+      when it came to limerence. The album was 13 songs long and the
+      lead single was "Arizona". The most streamed song on the album
+      was "Obsessed With You".
+
+      The album was made red because Jared wrote the entire album
+      "seeing red". The album follows the jealous mindset of a very
+      angry Jared writing about the one-of-a-kind iconic girl herself.
+
+      The album wasn't supposed to have a sequel, but due to its
+      success, the 15-song Part 2 is now in creation.
+    </p>
+
+    <button class="btn" onclick="playAudio()">
+      Preview "One Look"
+    </button>
+
+  </div>
+
+  <div class="cover"
+       style="background-image:url('YOUR_IMAGE_URL_HERE');">
+
     <div class="cover-info">
       <div>Lead Single</div>
-      <strong>ear to ear</strong>
+      <strong>One Look</strong>
     </div>
-  </div>
-</section><main><section class="section">
-  <h2 class="section-title">Inner Thoughts</h2>  <p class="thought">Im sorry im this way.</p>
-  <p class="thought">You saw my message… and chose not to reply.</p>
-  <p class="thought">I wonder if you ever think about me the way I think about you.</p>
-</section><section class="section">
-  <h2 class="section-title">Fan Reactions from Part 1</h2>  <div class="fans">
-    <div class="fan">“this feels like obsession turned into art”</div>
-    <div class="fan">“its beautiful, and relatable, i love it!!!”</div>
-    <div class="fan">“this is Amazing, I can’t stop listening”</div>
-  </div>
-</section><section class="section">
-  <h2 class="section-title">Streaming</h2>
-  <p>Available soon on all platforms.</p>
-</section></main><footer>
-  © <span id="year"></span> Jared R
-</footer><script>
-// year
-document.getElementById("year").textContent = new Date().getFullYear();
 
-// play button
-function playAudio() {
+  </div>
+
+</section>
+
+<main>
+
+  <!-- COUNTDOWN -->
+  <section class="section">
+    <h2 class="section-title">Countdown To Release</h2>
+
+    <div id="countdown" class="countdown-box">
+      Loading...
+    </div>
+  </section>
+
+  <!-- THOUGHTS -->
+  <section class="section">
+    <h2 class="section-title">Inner Thoughts</h2>
+
+    <p class="thought">I'm sorry I'm this way.</p>
+    <p class="thought">
+      You saw my message… and chose not to reply.
+    </p>
+    <p class="thought">
+      I wonder if you ever think about me the way I think about you.
+    </p>
+  </section>
+
+  <!-- FAN REACTIONS -->
+  <section class="section">
+    <h2 class="section-title">Fan Reactions from Part 1</h2>
+
+    <div class="fans">
+      <div class="fan">
+        "this feels like obsession turned into art"
+      </div>
+
+      <div class="fan">
+        "its beautiful, and relatable, i love it!!!"
+      </div>
+
+      <div class="fan">
+        "this is Amazing, I can't stop listening"
+      </div>
+    </div>
+  </section>
+
+  <!-- STREAMING -->
+  <section class="section">
+  <h2 class="section-title">Streaming</h2>
+
+  <div class="platforms">
+
+    <a href="#" class="platform-card">
+      <span>🍎</span>
+      <div>
+        <strong>Apple Music</strong>
+        <p>Coming Soon</p>
+      </div>
+    </a>
+
+    <a href="#" class="platform-card">
+      <span>🟢</span>
+      <div>
+        <strong>Spotify</strong>
+        <p>Coming Soon</p>
+      </div>
+    </a>
+
+    <a href="#" class="platform-card">
+      <span>📦</span>
+      <div>
+        <strong>Amazon Music</strong>
+        <p>Coming Soon</p>
+      </div>
+    </a>
+
+    <a href="#" class="platform-card">
+      <span>🔴</span>
+      <div>
+        <strong>YT Music</strong>
+        <p>Coming Soon</p>
+      </div>
+    </a>
+
+    <a href="#" class="platform-card">
+      <span>▶️</span>
+      <div>
+        <strong>YT Channel</strong>
+        <p>Visit Channel</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Jared R
+</footer>
+
+<audio id="audioPlayer">
+  <source src="ear-to-ear-preview.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+// Current Year
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+// Countdown Date
+const releaseDate = new Date("2026-10-08T00:00:00");
+
+function updateCountdown(){
+
+  const now = new Date();
+  const difference = releaseDate - now;
+
+  if(difference <= 0){
+    document.getElementById("countdown").innerHTML =
+    "OUT NOW";
+    return;
+  }
+
+  const days = Math.floor(
+    difference / (1000 * 60 * 60 * 24)
+  );
+
+  const hours = Math.floor(
+    (difference / (1000 * 60 * 60)) % 24
+  );
+
+  const minutes = Math.floor(
+    (difference / (1000 * 60)) % 60
+  );
+
+  const seconds = Math.floor(
+    (difference / 1000) % 60
+  );
+
+  document.getElementById("countdown").innerHTML =
+  `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+// Audio Preview
+function playAudio(){
   document.getElementById("audioPlayer").play();
 }
 
-// scroll reveal
-const revealElements = document.querySelectorAll('.thought, .fan');
+// Scroll Reveal
+const revealElements =
+document.querySelectorAll('.thought, .fan');
 
 window.addEventListener('scroll', () => {
+
   revealElements.forEach(el => {
+
     const top = el.getBoundingClientRect().top;
+
     if(top < window.innerHeight - 50){
       el.classList.add('show');
     }
+
   });
+
 });
-</script></body>
+</script>
+
+</body>
 </html>
