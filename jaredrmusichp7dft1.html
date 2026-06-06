@@ -12,6 +12,10 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:system-ui,sans-serif;
   background:radial-gradient(circle at top,#2b0000,#000 70%);
@@ -39,13 +43,14 @@ body::before{
 }
 
 /* NAV */
+
 header{
   position:sticky;
   top:0;
-  background:rgba(0,0,0,0.9);
+  background:rgba(0,0,0,0.92);
   padding:1rem;
   border-bottom:1px solid #220000;
-  z-index:10;
+  z-index:100;
 }
 
 .nav{
@@ -53,11 +58,14 @@ header{
   margin:auto;
   display:flex;
   justify-content:space-between;
+  align-items:center;
+  gap:1rem;
   font-size:0.9rem;
-  letter-spacing:0.1em;
+  letter-spacing:0.08em;
 }
 
 /* HERO */
+
 .hero{
   max-width:1100px;
   margin:3rem auto;
@@ -69,72 +77,79 @@ header{
 }
 
 .hero-sub{
-  letter-spacing:0.2em;
-  opacity:0.6;
+  letter-spacing:0.18em;
+  opacity:.65;
   margin-bottom:1rem;
 }
 
 .hero-title{
-  font-size:clamp(2.2rem,4vw,3rem);
+  font-size:clamp(2.2rem,4vw,3.5rem);
   font-weight:800;
-  text-transform:uppercase;
   line-height:1.1;
+  text-transform:uppercase;
 }
 
 .hero-text{
-  margin:1rem 0;
-  color:#ccc;
-  max-width:30rem;
+  margin:1.2rem 0;
+  color:#cfcfcf;
+  max-width:36rem;
+  line-height:1.7;
 }
 
 /* BUTTON */
+
 .btn{
-  padding:0.65rem 1.5rem;
-  border-radius:999px;
+  padding:.8rem 1.6rem;
   border:none;
+  border-radius:999px;
   cursor:pointer;
-  background:linear-gradient(135deg,#ff0000,#ff4d6d);
   color:white;
-  box-shadow:0 0 20px rgba(255,0,0,0.5);
-  transition:0.2s;
+  font-weight:700;
+  background:linear-gradient(135deg,#ff0000,#ff4d6d);
+  box-shadow:0 0 20px rgba(255,0,0,.4);
+  transition:.25s;
 }
 
 .btn:hover{
   transform:scale(1.05);
-  box-shadow:0 0 30px rgba(255,0,0,0.7);
+  box-shadow:0 0 35px rgba(255,0,0,.7);
 }
 
 /* COVER */
+
 .cover{
   aspect-ratio:4/5;
   border-radius:1.5rem;
   overflow:hidden;
+  position:relative;
   background-size:cover;
   background-position:center;
-  position:relative;
-  transition:0.4s;
+  transition:.4s;
 }
 
 .cover:hover{
-  transform:scale(1.04);
-  box-shadow:0 0 45px rgba(255,0,0,0.6);
+  transform:scale(1.03);
+  box-shadow:0 0 45px rgba(255,0,0,.55);
 }
 
 .cover::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
+  background:linear-gradient(to top,
+  rgba(0,0,0,.95),
+  transparent);
 }
 
 .cover-info{
   position:absolute;
-  bottom:1rem;
   left:1rem;
+  bottom:1rem;
   z-index:2;
 }
 
-/* SECTIONS */
+/* SECTION */
+
 .section{
   max-width:1100px;
   margin:auto;
@@ -143,34 +158,75 @@ header{
 }
 
 .section-title{
+  font-size:1.05rem;
   text-transform:uppercase;
   margin-bottom:1rem;
-  font-size:1.1rem;
+  letter-spacing:.08em;
 }
 
 /* COUNTDOWN */
+
 .countdown-box{
-  margin-top:1rem;
-  padding:1.5rem;
   text-align:center;
-  font-size:clamp(1.8rem,4vw,3rem);
-  font-weight:800;
+  padding:1.5rem;
   border-radius:1rem;
-  background:rgba(255,0,0,0.08);
-  border:1px solid rgba(255,0,0,0.25);
-  box-shadow:0 0 25px rgba(255,0,0,0.15);
+  background:rgba(255,0,0,.08);
+  border:1px solid rgba(255,0,0,.25);
   color:#ff5c75;
-  letter-spacing:0.05em;
+  font-size:clamp(2rem,5vw,3rem);
+  font-weight:800;
+  box-shadow:0 0 25px rgba(255,0,0,.15);
+}
+
+/* TRACKLIST CARD */
+
+.option-card-link{
+  text-decoration:none;
+  color:white;
+  display:block;
+}
+
+.option-card{
+  position:relative;
+  padding:1.5rem;
+  border-radius:1rem;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,0,0,.15);
+  transition:.25s;
+}
+
+.option-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(255,0,0,.55);
+  box-shadow:0 0 30px rgba(255,0,0,.25);
+}
+
+.option-card h3{
+  margin-bottom:.6rem;
+}
+
+.option-card p{
+  color:#bbb;
+}
+
+.card-arrow{
+  position:absolute;
+  right:1.5rem;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:2rem;
+  color:#ff4d6d;
 }
 
 /* THOUGHTS */
+
 .thought{
   opacity:0;
   transform:translateY(20px);
-  transition:0.6s;
+  transition:.6s;
   margin:1rem 0;
-  font-style:italic;
   color:#ff9aa2;
+  font-style:italic;
 }
 
 .thought.show{
@@ -179,6 +235,7 @@ header{
 }
 
 /* FAN REACTIONS */
+
 .fans{
   display:grid;
   gap:1rem;
@@ -189,10 +246,9 @@ header{
   background:#020617;
   border-radius:1rem;
   border:1px solid #111;
-  font-size:0.9rem;
   opacity:0;
   transform:translateY(20px);
-  transition:0.6s;
+  transition:.6s;
 }
 
 .fan.show{
@@ -200,18 +256,62 @@ header{
   transform:translateY(0);
 }
 
+/* STREAMING */
+
+.platforms{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1rem;
+}
+
+.platform-card{
+  text-decoration:none;
+  color:white;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:1rem;
+  border-radius:1rem;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,0,0,.15);
+  transition:.25s;
+}
+
+.platform-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(255,0,0,.55);
+  box-shadow:0 0 25px rgba(255,0,0,.25);
+}
+
+.platform-card span{
+  font-size:2rem;
+}
+
+.platform-card p{
+  color:#aaa;
+  font-size:.85rem;
+}
+
 /* FOOTER */
+
 footer{
   text-align:center;
   padding:2rem;
-  opacity:0.6;
-  font-size:0.8rem;
+  opacity:.6;
+  font-size:.85rem;
 }
 
 /* MOBILE */
+
 @media(max-width:768px){
+
   .hero{
     grid-template-columns:1fr;
+  }
+
+  .nav{
+    flex-direction:column;
+    text-align:center;
   }
 }
 </style>
@@ -221,7 +321,7 @@ footer{
 
 <header>
   <div class="nav">
-    <div>CHAPTER 8 (Starting Soon)</div>
+    <div>CHAPTER 8 (STARTING SOON)</div>
     <div>06.08.26 → 10.08.26</div>
   </div>
 </header>
@@ -231,7 +331,7 @@ footer{
   <div>
 
     <p class="hero-sub">
-      R&B POP · ARTIST/PRODUCER • Limerence (THE JEALOUSY ERA [Part 2])
+      R&B POP · ARTIST/PRODUCER • LIMERENCE (THE JEALOUSY ERA PART 2)
     </p>
 
     <h1 class="hero-title">
@@ -240,21 +340,22 @@ footer{
     </h1>
 
     <p class="hero-text">
-      Mastering Elegance Generosity And Negotiation had the best songs
-      when it came to limerence. The album was 13 songs long and the
-      lead single was "Arizona". The most streamed song on the album
-      was "Obsessed With You".
+      Mastering Elegance, Generosity & Negotiation had some of the most
+      emotional songs when it came to limerence. The original album
+      featured 13 songs and introduced listeners to the red era.
 
-      The album was made red because Jared wrote the entire album
-      "seeing red". The album follows the jealous mindset of a very
-      angry Jared writing about the one-of-a-kind iconic girl herself.
+      The lead single was "Arizona" while "Obsessed With You" became
+      the most streamed song from the project.
 
-      The album wasn't supposed to have a sequel, but due to its
-      success, the 15-song Part 2 is now in creation.
+      Written while seeing red, the album explored jealousy, longing,
+      obsession and heartbreak surrounding one unforgettable girl.
+
+      What was never meant to become a series is now continuing with a
+      brand new 15-song sequel.
     </p>
 
     <button class="btn" onclick="playAudio()">
-      Preview "One Look"
+      Preview "ear to ear"
     </button>
 
   </div>
@@ -264,7 +365,7 @@ footer{
 
     <div class="cover-info">
       <div>Lead Single</div>
-      <strong>One Look</strong>
+      <strong>ear to ear</strong>
     </div>
 
   </div>
@@ -274,6 +375,7 @@ footer{
 <main>
 
   <!-- COUNTDOWN -->
+
   <section class="section">
     <h2 class="section-title">Countdown To Release</h2>
 
@@ -282,24 +384,77 @@ footer{
     </div>
   </section>
 
-  <!-- THOUGHTS -->
+  <!-- TRACKLIST CARD -->
+
   <section class="section">
+    <h2 class="section-title">Album Content</h2>
+
+    <a href="tracklist.html"
+       target="_blank"
+       class="option-card-link">
+
+      <div class="option-card">
+
+        <h3>📀 View Full Song List</h3>
+
+        <p>
+          Explore the complete tracklist for
+          Mastering Elegance, Generosity &
+          Negotiation (Part 2).
+        </p>
+
+        <span class="card-arrow">→</span>
+
+      </div>
+
+    </a>
+  </section>
+  <section class="section">
+  <h2 class="section-title">Coming Later</h2>  <div class="locked-card">
+    <div class="lock-icon">🔒</div><h3>Card is Locked</h3>
+
+<p>
+  Additional content will unlock at a later date.
+  Check back soon.
+</p>
+
+<div class="lock-status">
+  LOCKED
+</div>
+
+  </div>
+</section>
+
+  <!-- THOUGHTS -->
+
+  <section class="section">
+
     <h2 class="section-title">Inner Thoughts</h2>
 
-    <p class="thought">I'm sorry I'm this way.</p>
+    <p class="thought">
+      I'm sorry I'm this way.
+    </p>
+
     <p class="thought">
       You saw my message… and chose not to reply.
     </p>
+
     <p class="thought">
       I wonder if you ever think about me the way I think about you.
     </p>
+
   </section>
 
   <!-- FAN REACTIONS -->
+
   <section class="section">
-    <h2 class="section-title">Fan Reactions from Part 1</h2>
+
+    <h2 class="section-title">
+      Fan Reactions from Part 1
+    </h2>
 
     <div class="fans">
+
       <div class="fan">
         "this feels like obsession turned into art"
       </div>
@@ -309,62 +464,83 @@ footer{
       </div>
 
       <div class="fan">
-        "this is Amazing, I can't stop listening"
+        "this is amazing, i can't stop listening"
       </div>
+
     </div>
+
   </section>
 
   <!-- STREAMING -->
+
   <section class="section">
-  <h2 class="section-title">Streaming</h2>
 
-  <div class="platforms">
+    <h2 class="section-title">Streaming</h2>
 
-    <a href="#" class="platform-card">
-      <span>🍎</span>
-      <div>
-        <strong>Apple Music</strong>
-        <p>Coming Soon</p>
-      </div>
-    </a>
+    <div class="platforms">
 
-    <a href="#" class="platform-card">
-      <span>🟢</span>
-      <div>
-        <strong>Spotify</strong>
-        <p>Coming Soon</p>
-      </div>
-    </a>
+      <a href="https://music.apple.com/us/artist/jared-r/1747341468?ls" class="platform-card">
+        <span>🍎</span>
+        <div>
+          <strong>Apple Music</strong>
+          <p>Listen Now</p>
+        </div>
+      </a>
 
-    <a href="#" class="platform-card">
-      <span>📦</span>
-      <div>
-        <strong>Amazon Music</strong>
-        <p>Coming Soon</p>
-      </div>
-    </a>
+      <a href="https://open.spotify.com/artist/0e0DfJrsP6wazDczmlt523?si=ABWIJ0IOTk-Ym8IejF1okg" class="platform-card">
+        <span>🟢</span>
+        <div>
+          <strong>Spotify</strong>
+          <p>Listen Now</p>
+        </div>
+      </a>
 
-    <a href="#" class="platform-card">
-      <span>🔴</span>
-      <div>
-        <strong>YT Music</strong>
-        <p>Coming Soon</p>
-      </div>
-    </a>
+      <a href="Check out Jared R on Amazon Music
+ https://music.amazon.com/artists/B0B6QT5R4X?ref=dm_sh_FanhVXFoFA1SF0kKa1mhMibGb 
+" class="platform-card">
+        <span>📦</span>
+        <div>
+          <strong>Amazon Music</strong>
+          <p>Listen Now</p>
+        </div>
+      </a>
 
-    <a href="#" class="platform-card">
-      <span>▶️</span>
-      <div>
-        <strong>YT Channel</strong>
-        <p>Visit Channel</p>
-      </div>
-    </a>
+      <a href="https://music.youtube.com/@officialjaredr?si=ijNr5pohjRYEgGcC" class="platform-card">
+        <span>🔴</span>
+        <div>
+          <strong>YT Music</strong>
+          <p>Listen Now</p>
+        </div>
+      </a>
+
+      <a href="https://youtube.com/@officialjaredr?si=oL62AFiLLTQC_Q5C" class="platform-card">
+        <span>▶️</span>
+        <div>
+          <strong>YT Channel</strong>
+          <p>Visit Channel</p>
+        </div>
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+<section class="section">
+  <h2 class="section-title">Coming Later</h2>  <div class="locked-card">
+    <div class="lock-icon">🔒</div><h3>Card is Locked</h3>
+
+<p>
+  Additional content will unlock at a later date.
+  Check back soon.
+</p>
+
+<div class="lock-status">
+  LOCKED
+</div>
 
   </div>
 </section>
-
-</main>
-
 <footer>
   © <span id="year"></span> Jared R
 </footer>
@@ -375,12 +551,15 @@ footer{
 
 <script>
 
-// Current Year
+// YEAR
+
 document.getElementById("year").textContent =
 new Date().getFullYear();
 
-// Countdown Date
-const releaseDate = new Date("2026-10-08T00:00:00");
+// COUNTDOWN
+
+const releaseDate =
+new Date("2026-10-08T00:00:00");
 
 function updateCountdown(){
 
@@ -393,21 +572,17 @@ function updateCountdown(){
     return;
   }
 
-  const days = Math.floor(
-    difference / (1000 * 60 * 60 * 24)
-  );
+  const days =
+  Math.floor(difference/(1000*60*60*24));
 
-  const hours = Math.floor(
-    (difference / (1000 * 60 * 60)) % 24
-  );
+  const hours =
+  Math.floor((difference/(1000*60*60))%24);
 
-  const minutes = Math.floor(
-    (difference / (1000 * 60)) % 60
-  );
+  const minutes =
+  Math.floor((difference/(1000*60))%60);
 
-  const seconds = Math.floor(
-    (difference / 1000) % 60
-  );
+  const seconds =
+  Math.floor((difference/1000)%60);
 
   document.getElementById("countdown").innerHTML =
   `${days}d ${hours}h ${minutes}m ${seconds}s`;
@@ -416,20 +591,23 @@ function updateCountdown(){
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-// Audio Preview
+// AUDIO
+
 function playAudio(){
   document.getElementById("audioPlayer").play();
 }
 
-// Scroll Reveal
+// SCROLL REVEAL
+
 const revealElements =
-document.querySelectorAll('.thought, .fan');
+document.querySelectorAll('.thought,.fan');
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll',()=>{
 
-  revealElements.forEach(el => {
+  revealElements.forEach(el=>{
 
-    const top = el.getBoundingClientRect().top;
+    const top =
+    el.getBoundingClientRect().top;
 
     if(top < window.innerHeight - 50){
       el.classList.add('show');
