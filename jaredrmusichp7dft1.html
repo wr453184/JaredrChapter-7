@@ -1,318 +1,587 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chapter 8 — Mastering Elegance</title>
+<meta name="theme-color" content="#050705">
+
+<title>Chapter 10 — Righteous Addition Cordial Happiness And Eternal Love (Part 2) | Jared R</title>
+<meta name="description" content="Chapter 10 by Jared R. Righteous Addition Cordial Happiness And Eternal Love (Part 2). A story of limerence, unspoken feelings, impossible circumstances, and emotional growth.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+:root {
+  --black: #050705;
+  --panel: #0c100c;
+  --green: #153c2a;
+  --green-light: #6c9b79;
+  --red: #a92d38;
+  --rose: #e7a5a9;
+  --ivory: #f4eee3;
+  --muted: #b9b9b1;
+  --border: rgba(244,238,227,.13);
 }
 
-html{
-  scroll-behavior:smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  font-family:system-ui,sans-serif;
-  background:radial-gradient(circle at top,#2b0000,#000 70%);
-  color:white;
-  overflow-x:hidden;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
-/* Ambient Glow */
-body::before{
-  content:"";
-  position:fixed;
-  width:200%;
-  height:200%;
-  top:-50%;
-  left:-50%;
-  background:radial-gradient(circle,rgba(255,0,0,0.12),transparent 60%);
-  animation:glowMove 14s linear infinite;
-  z-index:-1;
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--black);
+  color: var(--ivory);
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-@keyframes glowMove{
-  0%{transform:translate(0,0);}
-  50%{transform:translate(8%,8%);}
-  100%{transform:translate(0,0);}
+body::before {
+  content: "";
+  position: fixed;
+  inset: -35%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 25%, rgba(21,60,42,.28), transparent 45%),
+    radial-gradient(ellipse at 80% 65%, rgba(169,45,56,.13), transparent 42%);
+  animation: ambient 18s ease-in-out infinite alternate;
 }
 
-/* NAV */
-
-header{
-  position:sticky;
-  top:0;
-  background:rgba(0,0,0,0.92);
-  padding:1rem;
-  border-bottom:1px solid #220000;
-  z-index:100;
+@keyframes ambient {
+  from { transform: translate(-2%,-1%); }
+  to { transform: translate(3%,2%); }
 }
 
-.nav{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:1rem;
-  font-size:0.9rem;
-  letter-spacing:0.08em;
+a { color: inherit; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(5,7,5,.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
 }
 
-/* HERO */
-
-.hero{
-  max-width:1100px;
-  margin:3rem auto;
-  padding:0 1rem;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:2rem;
-  align-items:center;
+.nav {
+  max-width: 1180px;
+  margin: auto;
+  padding: 1rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
-.hero-sub{
-  letter-spacing:0.18em;
-  opacity:.65;
-  margin-bottom:1rem;
+.brand {
+  font-size: .85rem;
+  letter-spacing: .2em;
+  font-weight: 700;
 }
 
-.hero-title{
-  font-size:clamp(2.2rem,4vw,3.5rem);
-  font-weight:800;
-  line-height:1.1;
-  text-transform:uppercase;
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
 }
 
-.hero-text{
-  margin:1.2rem 0;
-  color:#cfcfcf;
-  max-width:36rem;
-  line-height:1.7;
+.nav-links a {
+  font-size: .75rem;
+  text-decoration: none;
+  color: var(--muted);
+  transition: color .25s;
 }
 
-/* BUTTON */
+.nav-links a:hover { color: var(--rose); }
 
-.btn{
-  padding:.8rem 1.6rem;
-  border:none;
-  border-radius:999px;
-  cursor:pointer;
-  color:white;
-  font-weight:700;
-  background:linear-gradient(135deg,#ff0000,#ff4d6d);
-  box-shadow:0 0 20px rgba(255,0,0,.4);
-  transition:.25s;
+.hero {
+  max-width: 1180px;
+  margin: auto;
+  padding: 5rem 1.4rem 4rem;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 4rem;
 }
 
-.btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 35px rgba(255,0,0,.7);
+.eyebrow {
+  color: var(--green-light);
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .72rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
 }
 
-/* COVER */
-
-.cover{
-  aspect-ratio:4/5;
-  border-radius:1.5rem;
-  overflow:hidden;
-  position:relative;
-  background-size:cover;
-  background-position:center;
-  transition:.4s;
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  line-height: 1;
+  font-weight: 500;
 }
 
-.cover:hover{
-  transform:scale(1.03);
-  box-shadow:0 0 45px rgba(255,0,0,.55);
+.script {
+  font-family: "Dancing Script", cursive;
+  color: var(--rose);
+  font-weight: 600;
 }
 
-.cover::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top,
-  rgba(0,0,0,.95),
-  transparent);
+.hero-text {
+  color: var(--muted);
+  margin: 1.5rem 0 2rem;
+  font-size: .96rem;
 }
 
-.cover-info{
-  position:absolute;
-  left:1rem;
-  bottom:1rem;
-  z-index:2;
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
 }
 
-/* SECTION */
-
-.section{
-  max-width:1100px;
-  margin:auto;
-  padding:2.5rem 1rem;
-  border-bottom:1px solid #111;
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  padding: .85rem 1.3rem;
+  border: 1px solid var(--green-light);
+  border-radius: 3px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: .83rem;
+  transition: .25s;
 }
 
-.section-title{
-  font-size:1.05rem;
-  text-transform:uppercase;
-  margin-bottom:1rem;
-  letter-spacing:.08em;
+.btn:hover {
+  background: #245b3b;
+  transform: translateY(-2px);
 }
 
-/* COUNTDOWN */
-
-.countdown-box{
-  text-align:center;
-  padding:1.5rem;
-  border-radius:1rem;
-  background:rgba(255,0,0,.08);
-  border:1px solid rgba(255,0,0,.25);
-  color:#ff5c75;
-  font-size:clamp(2rem,5vw,3rem);
-  font-weight:800;
-  box-shadow:0 0 25px rgba(255,0,0,.15);
+.btn-outline {
+  background: transparent;
+  border-color: var(--border);
 }
 
-/* TRACKLIST CARD */
-
-.option-card-link{
-  text-decoration:none;
-  color:white;
-  display:block;
+.btn-outline:hover {
+  border-color: var(--rose);
 }
 
-.option-card{
-  position:relative;
-  padding:1.5rem;
-  border-radius:1rem;
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,0,0,.15);
-  transition:.25s;
+.hero-art {
+  min-height: 510px;
 }
 
-.option-card:hover{
-  transform:translateY(-5px);
-  border-color:rgba(255,0,0,.55);
-  box-shadow:0 0 30px rgba(255,0,0,.25);
+.artwork {
+  width: 100%;
+  height: 100%;
+  min-height: 510px;
+  position: relative;
+  overflow: hidden;
+  background-color: #101810;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--border);
+  box-shadow: 0 25px 80px rgba(0,0,0,.5);
 }
 
-.option-card h3{
-  margin-bottom:.6rem;
+.artwork::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.9), transparent 70%);
 }
 
-.option-card p{
-  color:#bbb;
+.artwork-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
 }
 
-.card-arrow{
-  position:absolute;
-  right:1.5rem;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:2rem;
-  color:#ff4d6d;
+.artwork-caption small {
+  color: var(--rose);
+  letter-spacing: .18em;
+  text-transform: uppercase;
 }
 
-/* THOUGHTS */
-
-.thought{
-  opacity:0;
-  transform:translateY(20px);
-  transition:.6s;
-  margin:1rem 0;
-  color:#ff9aa2;
-  font-style:italic;
+.artwork-caption h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  margin-top: .5rem;
 }
 
-.thought.show{
-  opacity:1;
-  transform:translateY(0);
+.section {
+  max-width: 1180px;
+  margin: auto;
+  padding: 4rem 1.4rem;
+  border-top: 1px solid var(--border);
 }
 
-/* FAN REACTIONS */
+.section-heading { margin-bottom: 2rem; }
 
-.fans{
-  display:grid;
-  gap:1rem;
+.section-heading .eyebrow { margin-bottom: .4rem; }
+
+.section-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  font-weight: 500;
 }
 
-.fan{
-  padding:1rem;
-  background:#020617;
-  border-radius:1rem;
-  border:1px solid #111;
-  opacity:0;
-  transform:translateY(20px);
-  transition:.6s;
+.section-heading p {
+  color: var(--muted);
+  max-width: 700px;
+  margin-top: .7rem;
 }
 
-.fan.show{
-  opacity:1;
-  transform:translateY(0);
+.countdown-panel {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  background: linear-gradient(140deg, rgba(21,60,42,.38), rgba(169,45,56,.10), rgba(0,0,0,.2));
+  border: 1px solid rgba(108,155,121,.3);
 }
 
-/* STREAMING */
-
-.platforms{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:1rem;
+.countdown-label {
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: .75rem;
+  color: var(--rose);
+  margin-bottom: 1.4rem;
 }
 
-.platform-card{
-  text-decoration:none;
-  color:white;
-  display:flex;
-  align-items:center;
-  gap:1rem;
-  padding:1rem;
-  border-radius:1rem;
-  background:rgba(255,255,255,.03);
-  border:1px solid rgba(255,0,0,.15);
-  transition:.25s;
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  max-width: 700px;
+  margin: auto;
 }
 
-.platform-card:hover{
-  transform:translateY(-5px);
-  border-color:rgba(255,0,0,.55);
-  box-shadow:0 0 25px rgba(255,0,0,.25);
+.time-unit {
+  padding: 1rem .25rem;
+  border-right: 1px solid var(--border);
 }
 
-.platform-card span{
-  font-size:2rem;
+.time-unit:last-child { border-right: 0; }
+
+.time-unit strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem,5vw,3.7rem);
+  line-height: 1.1;
 }
 
-.platform-card p{
-  color:#aaa;
-  font-size:.85rem;
+.time-unit span {
+  display: block;
+  margin-top: .5rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--muted);
+  font-size: .67rem;
 }
 
-/* FOOTER */
-
-footer{
-  text-align:center;
-  padding:2rem;
-  opacity:.6;
-  font-size:.85rem;
+.release-note {
+  color: var(--muted);
+  font-size: .85rem;
+  margin-top: 1.5rem;
 }
 
-/* MOBILE */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 1.2rem;
+}
 
-@media(max-width:768px){
+.card {
+  background: rgba(255,255,255,.025);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: .3s;
+}
 
-  .hero{
-    grid-template-columns:1fr;
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(108,155,121,.55);
+  box-shadow: 0 16px 35px rgba(0,0,0,.25);
+}
+
+.card-image {
+  aspect-ratio: 4/4.5;
+  background-color: #101510;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-body { padding: 1.4rem; }
+
+.card-body h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+
+.card-body p {
+  color: var(--muted);
+  font-size: .88rem;
+  margin-bottom: 1rem;
+}
+
+.text-link {
+  color: var(--rose);
+  font-size: .85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover { text-decoration: underline; }
+
+/* LOCKED CONTENT */
+
+.locked-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(2rem,6vw,5rem) 1.5rem;
+  border: 1px solid rgba(169,45,56,.38);
+  border-radius: 4px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(169,45,56,.22), transparent 60%),
+    linear-gradient(145deg, #111711, #080908 65%, #100708);
+  box-shadow: 0 20px 70px rgba(0,0,0,.4);
+}
+
+.locked-card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(244,238,227,.08);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.locked-glow {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  background: rgba(169,45,56,.12);
+  filter: blur(70px);
+  border-radius: 50%;
+  z-index: -1;
+  animation: lockGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes lockGlow {
+  from { opacity: .4; transform: translateX(-50%) scale(.8); }
+  to { opacity: 1; transform: translateX(-50%) scale(1.15); }
+}
+
+.lock-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 1.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(231,165,169,.45);
+  background: rgba(169,45,56,.12);
+  color: var(--rose);
+  box-shadow: 0 0 35px rgba(169,45,56,.16);
+}
+
+.lock-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.locked-label {
+  color: var(--rose);
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  font-size: .7rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.locked-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem,5vw,3.6rem);
+  line-height: 1.05;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.locked-card p {
+  max-width: 570px;
+  margin: 0 auto;
+  color: var(--muted);
+}
+
+.locked-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  margin-top: 1.8rem;
+  padding: .65rem 1rem;
+  border: 1px solid rgba(231,165,169,.22);
+  color: var(--rose);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--red);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  50% { opacity: .4; }
+}
+
+.grid-facts {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 1rem;
+}
+
+.fact {
+  padding: 1.4rem;
+  border-left: 2px solid var(--green-light);
+  background: rgba(255,255,255,.025);
+  color: var(--muted);
+}
+
+.fact strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  color: var(--ivory);
+  font-size: 1.35rem;
+  margin-bottom: .5rem;
+}
+
+.reactions {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 1rem;
+}
+
+.reaction {
+  padding: 1.5rem;
+  background: rgba(169,45,56,.06);
+  border: 1px solid rgba(169,45,56,.2);
+  color: var(--muted);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+}
+
+.platforms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
+  gap: .8rem;
+}
+
+.platform {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.025);
+  transition: .25s;
+}
+
+.platform:hover {
+  background: rgba(21,60,42,.25);
+  border-color: var(--green-light);
+}
+
+.platform .emoji { font-size: 1.7rem; }
+.platform strong { display: block; font-size: .9rem; }
+.platform small { color: var(--muted); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--muted);
+  font-size: .8rem;
+  border-top: 1px solid var(--border);
+}
+
+footer strong { color: var(--ivory); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
   }
 
-  .nav{
-    flex-direction:column;
-    text-align:center;
+  .reveal { opacity: 1; transform: none; }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 3rem;
   }
+
+  .hero-art, .artwork { min-height: 420px; }
+
+  .grid, .grid-facts, .reactions {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .nav { flex-direction: column; }
+  .nav-links { justify-content: center; }
+}
+
+@media (max-width: 520px) {
+  .nav-links { gap: .75rem; }
+  .nav-links a { font-size: .68rem; }
+
+  .grid, .grid-facts, .reactions {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown { gap: .1rem; }
+  .time-unit { padding: .8rem .1rem; }
+  .time-unit span { font-size: .58rem; letter-spacing: .04em; }
+
+  .hero-art, .artwork { min-height: 380px; }
+
+  .locked-card { padding: 3rem 1.2rem; }
 }
 </style>
 </head>
@@ -320,340 +589,497 @@ footer{
 <body>
 
 <header>
-  <div class="nav">
-    <div>CHAPTER 8 (🔴EVENT HAS ENDED)</div>
-    <div>06.08.26 → 10.08.26</div>
-  </div>
+  <nav class="nav">
+    <div class="brand">JARED R · CHAPTER 10</div>
+
+    <div class="nav-links">
+      <a href="#about">THE STORY</a>
+      <a href="#countdown">COUNTDOWN</a>
+      <a href="#artwork">ARTWORK</a>
+      <a href="#reveal">LOCKED CONTENT</a>
+      <a href="#streaming">STREAMING</a>
+    </div>
+  </nav>
 </header>
 
-<section class="hero">
+<!-- HERO -->
+
+<section class="hero" id="about">
 
   <div>
-
-    <p class="hero-sub">
-      R&B POP · ARTIST/PRODUCER • LIMERENCE (THE JEALOUSY ERA PART 2)
+    <p class="eyebrow">
+      R&B POP · ARTIST · PRODUCER · LIMERENCE
     </p>
 
-    <h1 class="hero-title">
-      Mastering Elegance,<br>
-      Generosity & Negotiation (Part 2)
+    <h1>
+      Righteous Addition<br>
+      <span class="script">Cordial Happiness</span><br>
+      And Eternal Love<br>
+      <span class="script">(Part 2)</span>
     </h1>
 
     <p class="hero-text">
-      Mastering Elegance, Generosity & Negotiation had some of the most
-      emotional songs when it came to limerence. The original album
-      featured 13 songs and introduced listeners to the red era.
+      Some feelings arrive when you least expect them. Some people
+      make an ordinary moment feel extraordinary, and some connections
+      leave you wondering what could have been.
 
-      The lead single was "Arizona" while "Obsessed With You" became
-      the most streamed song from the project.
+      Welcome to Chapter 10 by Jared R: a continuation of the
+      limerence story, but with a different girl, a different
+      connection, and a different set of circumstances.
 
-      Written while seeing red, the album explored jealousy, longing,
-      obsession and heartbreak surrounding one unforgettable girl.
+      Caught between hope and acceptance, this chapter explores the
+      quiet happiness of having someone to care about, the frustration
+      of knowing a relationship may not be possible, and the challenge
+      of making peace with feelings that don't simply disappear.
 
-      What was never meant to become a series is now continuing with a
-      brand new 15-song sequel.
+      Sometimes, the heart makes an addition to your life that
+      reality won't allow you to keep.
     </p>
 
-    <a href="https://jaredrmusic.com/streaming"
-   target="_blank"
-   class="btn"
-   style="display:inline-block;text-decoration:none;">
-  Play the album!
-</a>
-
-  </div>
-
-  <a href="https://unitedmasters.com/m/one-look-1"
-   target="_blank"
-   style="text-decoration:none;color:white;display:block;">
-
-  <div class="cover"
-       style="background-image:url('YOUR_IMAGE_URL_HERE');">
-
-    <div class="cover-info">
-      <div>Lead Single</div>
-      <strong>One Look</strong>
+    <div class="button-row">
+      <a href="#countdown" class="btn">Explore Chapter 10</a>
+      <a href="https://jaredrmusic.com/streaming" class="btn btn-outline">Listen to Jared R</a>
     </div>
-
   </div>
 
-</a>
+  <div class="hero-art">
+    <div class="artwork"
+      role="img"
+      aria-label="Woman overlooking a red-lit city at night"
+      style="background-image:url('YOUR_CITY_COVER_IMAGE_URL');">
+
+      <div class="artwork-caption">
+        <small>The next chapter</small>
+        <h2>Love. Reflection. Renewal.</h2>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <main>
 
   <!-- COUNTDOWN -->
 
-  <section class="section">
-    <h2 class="section-title">Countdown To Release</h2>
+  <section class="section" id="countdown">
 
-    <div id="countdown" class="countdown-box">
-      Loading...
+    <div class="section-heading">
+      <p class="eyebrow">The next era begins</p>
+      <h2>Some Feelings Don't Follow the Rules.</h2>
+      <p>
+        An existing story about attraction, impossible timing, and the
+        distance between what the heart wants and what life allows.
+      </p>
+    </div>
+
+    <div class="countdown-panel">
+      <div class="countdown-label">
+        Chapter 10 Release Countdown
+      </div>
+
+      <div class="countdown" id="countdownClock"
+        role="timer" aria-label="Time remaining until release">
+
+        <div class="time-unit">
+          <strong id="days">000</strong>
+          <span>Days</span>
+        </div>
+
+        <div class="time-unit">
+          <strong id="hours">00</strong>
+          <span>Hours</span>
+        </div>
+
+        <div class="time-unit">
+          <strong id="minutes">00</strong>
+          <span>Minutes</span>
+        </div>
+
+        <div class="time-unit">
+          <strong id="seconds">00</strong>
+          <span>Seconds</span>
+        </div>
+      </div>
+
+      <p class="release-note">
+        May 17, 2027 · 12:00 AM local time
+      </p>
     </div>
   </section>
 
-  <!-- TRACKLIST CARD -->
+  <!-- ARTWORK -->
+
+  <section class="section" id="artwork">
+
+    <div class="section-heading">
+      <p class="eyebrow">A visual story</p>
+      <h2>Three Sides of the Journey.</h2>
+      <p>
+        The flowers represent what we cherish. The city represents
+        the memories that stay with us. The portrait represents
+        the person behind the music.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card reveal">
+        <div class="card-image"
+          role="img"
+          aria-label="White rose album artwork"
+          style="background-image:url('YOUR_WHITE_ROSE_COVER_URL');">
+        </div>
+
+        <div class="card-body">
+          <h3>The Original — The Feeling (locked)</h3>
+          <p>
+            The next spark, unexpected attraction, and the quiet
+            hope that something meaningful might come from it.
+          </p>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-image"
+          role="img"
+          aria-label="Red city skyline album artwork"
+          style="background-image:url('YOUR_CITY_COVER_IMAGE_URL');">
+        </div>
+
+        <div class="card-body">
+          <h3>The Ultimate Edition — Extended Collection (locked)</h3>
+          <p>
+            Continued late-night thoughts, imagined possibilities, emotional
+            distance, and the life you sometimes picture but may
+            never experience.
+          </p>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-image"
+          role="img"
+          aria-label="Black and white Jared R portrait"
+          style="background-image:url('YOUR_ARTIST_PORTRAIT_URL');">
+        </div>
+
+        <div class="card-body">
+          <h3>The Lead Single — When You Want Me (locked)</h3>
+          <p>
+            A Raw Message,about learning to acknowledge
+            his feelings while respecting reality.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TRACKLIST -->
 
   <section class="section">
-    <h2 class="section-title">Album Content</h2>
+
+    <div class="section-heading">
+      <p class="eyebrow">Inside the music</p>
+      <h2>The Chapter 10 Collection.</h2>
+      <p>
+        Follow the songs, uncover the stories, and explore the
+        music behind the next chapter.
+      </p>
+    </div>
 
     <a href="https://msha.ke/morejaredr"
        target="_blank"
-       class="option-card-link">
+       rel="noopener noreferrer"
+       class="btn">
 
-      <div class="option-card">
-
-        <h3>📀 View Full Song List</h3>
-
-        <p>
-          Explore the complete tracklist for
-          Mastering Elegance, Generosity &
-          Negotiation (Part 2).
-        </p>
-
-        <span class="card-arrow">→</span>
-
-      </div>
+      View Full Song List →
 
     </a>
+
   </section>
-  
-<section class="section">
 
-  <h2 class="section-title">⭐ Fan of the Month</h2>
+  <!-- LOCKED CONTENT REVEAL CARD -->
+  <!-- Replace this section's content when you are ready to reveal it. -->
 
-      <div style="flex:1;">
+  <section class="section" id="reveal">
 
-        <h3 style="margin-bottom:.4rem;">
-          🏆 Alexandria T.
-        </h3>
+    <div class="section-heading">
+      <p class="eyebrow">Classified · Chapter 10</p>
+      <h2>Something Is Waiting.</h2>
+      <p>
+        Not every part of the story is ready to be told.
+      </p>
+    </div>
 
-        <p style="color:#bbb;line-height:1.6;">
-          Alexandria has been chosen as this month's Fan of the Month for
-          consistently supporting Jared R, listening the music,
-          representing the community, and helping make
-          any song his favorite.
-        </p>
+    <div class="locked-card reveal">
 
+      <div class="locked-glow"></div>
+
+      <div class="lock-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+          <circle cx="12" cy="15" r="1"></circle>
+          <path d="M12 16v2"></path>
+        </svg>
+      </div>
+
+      <div class="locked-label">
+        Jared R · Restricted Access
+      </div>
+
+      <h3>Reveal Pending.</h3>
+
+      <p>
+        There is more to this chapter than what you see today.
+        A special piece of the story remains under wraps until
+        the right moment. When the time comes, this card will
+        unlock and reveal what has been waiting behind the scenes.
+      </p>
+
+      <div class="locked-status">
+        <span class="status-dot"></span>
+        <span>Content Locked · Awaiting Reveal</span>
       </div>
 
     </div>
 
-    <hr style="margin:1.5rem 0;border:none;border-top:1px solid rgba(255,255,255,.08);">
-
-    <div style="
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:1rem;
-      color:#ff8a9d;
-      font-weight:700;
-    ">
-
-      <span>🎧 Favorite Song: Arizona</span>
-      <span>📅 September 2026</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-  <!-- THOUGHTS -->
-
-  <section class="section">
-
-    <h2 class="section-title">Did You Know?</h2>
-
-    <p class="thought">
-      Jared's GA Manager Alexa is a Mastering Elegance Fan.
-    </p>
-
-    <p class="thought">
-      There are 55 songs about this one girl.
-    </p>
-
-    <p class="thought">
-      Jared spent over a decade writing songs about the Mastering elegance girl 
-    </p>
-
   </section>
 
-  <!-- FAN REACTIONS -->
+  <!-- DID YOU KNOW -->
 
   <section class="section">
 
-    <h2 class="section-title">
-      Fan Reactions from Part 1
-    </h2>
+    <div class="section-heading">
+      <p class="eyebrow">Behind the lyrics</p>
+      <h2>Beyond the Music.</h2>
+    </div>
 
-    <div class="fans">
+    <div class="grid-facts">
 
-      <div class="fan">
-        "this feels like obsession turned into art"
+      <div class="fact reveal">
+        <strong>The Attraction</strong>
+        A small interaction can leave a lasting impression.
+        Sometimes the mind keeps returning to a moment long
+        after it has passed.
       </div>
 
-      <div class="fan">
-        "its beautiful, and relatable, i love it!!!"
+      <div class="fact reveal">
+        <strong>The Circumstances</strong>
+        Not every connection can become a relationship.
+        Sometimes the situation calls for patience,
+        boundaries, and acceptance.
       </div>
 
-      <div class="fan">
-        "this is amazing, i can't stop listening"
+      <div class="fact reveal">
+        <strong>The Acceptance</strong>
+        You can care about someone without possessing them.
+        You can acknowledge a feeling while choosing how
+        you act on it.
       </div>
 
+    </div>
+  </section>
+
+  <!-- MUSIC REACTIONS -->
+
+  <section class="section">
+
+    <div class="section-heading">
+      <p class="eyebrow">The emotion behind the music</p>
+      <h2>Music That Connects Us.</h2>
+      <p>
+        Love, longing, and the feelings that are difficult
+        to explain in ordinary conversation.
+      </p>
+    </div>
+
+    <div class="reactions">
+      <div class="reaction reveal">
+        Some feelings are easier to sing than to say.
+      </div>
+
+      <div class="reaction reveal">
+        Sometimes the what-if stays longer than the moment.
+      </div>
+
+      <div class="reaction reveal">
+        Not every meaningful story has a romantic ending.
+      </div>
     </div>
 
   </section>
 
   <!-- STREAMING -->
 
-  <section class="section">
+  <section class="section" id="streaming">
 
-    <h2 class="section-title">Streaming</h2>
+    <div class="section-heading">
+      <p class="eyebrow">Listen everywhere</p>
+      <h2>Enter Jared R's World.</h2>
+      <p>
+        Find the music on your favorite streaming platform.
+      </p>
+    </div>
 
     <div class="platforms">
 
-      <a href="https://music.apple.com/us/artist/jared-r/1747341468?ls" class="platform-card">
-        <span>🍎</span>
+      <a href="https://music.apple.com/us/artist/jared-r/1747341468"
+         target="_blank" rel="noopener noreferrer"
+         class="platform">
+        <span class="emoji">🍎</span>
         <div>
           <strong>Apple Music</strong>
-          <p>Listen Now</p>
+          <small>Listen Now</small>
         </div>
       </a>
 
-      <a href="https://open.spotify.com/artist/0e0DfJrsP6wazDczmlt523?si=ABWIJ0IOTk-Ym8IejF1okg" class="platform-card">
-        <span>🟢</span>
+      <a href="https://open.spotify.com/artist/0e0DfJrsP6wazDczmlt523"
+         target="_blank" rel="noopener noreferrer"
+         class="platform">
+        <span class="emoji">🟢</span>
         <div>
           <strong>Spotify</strong>
-          <p>Listen Now</p>
+          <small>Listen Now</small>
         </div>
       </a>
 
-      <a href="https://music.amazon.com/artists/B0B6QT5R4X?ref=dm_sh_FanhVXFoFA1SF0kKa1mhMibGb 
-" class="platform-card">
-        <span>📦</span>
+      <a href="https://music.amazon.com/artists/B0B6QT5R4X"
+         target="_blank" rel="noopener noreferrer"
+         class="platform">
+        <span class="emoji">📦</span>
         <div>
           <strong>Amazon Music</strong>
-          <p>Listen Now</p>
+          <small>Listen Now</small>
         </div>
       </a>
 
-      <a href="https://music.youtube.com/@officialjaredr?si=ijNr5pohjRYEgGcC" class="platform-card">
-        <span>🔴</span>
+      <a href="https://music.youtube.com/@officialjaredr"
+         target="_blank" rel="noopener noreferrer"
+         class="platform">
+        <span class="emoji">🔴</span>
         <div>
-          <strong>YT Music</strong>
-          <p>Listen Now</p>
+          <strong>YouTube Music</strong>
+          <small>Listen Now</small>
         </div>
       </a>
 
-      <a href="https://youtube.com/@officialjaredr?si=oL62AFiLLTQC_Q5C" class="platform-card">
-        <span>▶️</span>
+      <a href="https://youtube.com/@officialjaredr"
+         target="_blank" rel="noopener noreferrer"
+         class="platform">
+        <span class="emoji">▶️</span>
         <div>
-          <strong>YT Channel</strong>
-          <p>Visit Channel</p>
+          <strong>YouTube Channel</strong>
+          <small>Watch & Subscribe</small>
         </div>
       </a>
 
     </div>
-
   </section>
 
 </main>
-<section class="section">
-  <h2 class="section-title">Chapter 8 Closing Statement</h2>  <div class="locked-card">
-    <div class="lock-icon">🔴</div><h3>In Closing</h3>
 
-<p>
-It is with the up most respect, I officially end a story line that has made history. Major fans already know: Mastering Elegance is coming to an end this October. As much as it has been a great 13 years of songs... we stop at a running total of 55. We know Mastering Elegance, Generosity, and Negotiation will continue to be played and enjoyed by many. A lot of people wanna know why. Well im gonna tell you. 13 years ago, i developed a liking to girl. I as any 5th grader attempted to talk to her. I wasnt great at it. This became the beginning of a very successful outcome. I took writing out my anger and being upset to writing out my feelings. There have been points over the years where we may have lost contact for periods of time. I told her to keep contact, dont lose it. The flame still burns. Very small and very slow. For 5 years I sat on jealousy and anger, however, in the last 9 months to 1 year: I have realized what I really want. I always thought it was me and her living the life she has now, but I realized what I really want is her to be happy. As a friend I will remain there for her if she ever needs it. I could go on and on with story's and events that strengthened our friendship. As many still go untold. But for my mind and the fact that im writing about someone who is enjoying life and not listening to my songs, I will be stopping the creation of those songs. As they are getting harder to write and are not as good as they used to be, some of the later ones you havent heard and didnt make it to the album are kinda shit. This is also getting really weird at the same time. They also have not been able to keep up with the other 2 girls storylines (I will continue to write songs about the other girls and more, just not Mastering Elegance). Maybe cuz im not jealous now. I appreciate all the plays and purchases made toward all the Mastering elegance songs. However, sometimes great stories come to a great end... all Songs and all merch will still be available tho.
-
----::*::---
-Oh, one last thing to the girl the storyline follows... I appreciate you and everything you've done. If there is one person I can say has done a lot, (some you dont even realize,) its you. With the most respect and dedication, i can always call you a friend. I hope you do read this. Thanks!
-
-Love ya friend,
-Jared
-</p>
-
-<div class="lock-status">
-  (JARED R LLC)
-</div>
-
-  </div>
-</section>
 <footer>
-  © <span id="year"></span> Jared R
+  © <span id="year"></span> <strong>Jared R</strong>
+  · All Rights Reserved
+  <br>
+  <span style="display:inline-block;margin-top:.5rem;">
+    Every chapter tells a story.
+  </span>
 </footer>
 
-<audio id="audioPlayer">
-  <source src="ear-to-ear-preview.mp3" type="audio/mpeg">
-</audio>
-
 <script>
+"use strict";
 
-// YEAR
+// CURRENT YEAR
 
 document.getElementById("year").textContent =
-new Date().getFullYear();
+  new Date().getFullYear();
 
 // COUNTDOWN
+// May 17, 2027, at 12:00 AM in the visitor's local time zone.
+// JavaScript months are zero-indexed: 4 = May.
 
-const releaseDate =
-new Date("2026-10-08T00:00:00");
+const releaseDate = new Date(2027, 4, 17, 0, 0, 0, 0);
 
-function updateCountdown(){
+const countdownClock = document.getElementById("countdownClock");
 
+const countdownElements = {
+  days: document.getElementById("days"),
+  hours: document.getElementById("hours"),
+  minutes: document.getElementById("minutes"),
+  seconds: document.getElementById("seconds")
+};
+
+let countdownInterval;
+
+function updateCountdown() {
   const now = new Date();
-  const difference = releaseDate - now;
+  const difference = releaseDate.getTime() - now.getTime();
 
-  if(difference <= 0){
-    document.getElementById("countdown").innerHTML =
-    "OUT NOW";
+  if (difference <= 0) {
+    countdownClock.innerHTML =
+      '<div style="grid-column:1/-1;padding:1.5rem;' +
+      'font-family:Cormorant Garamond,serif;font-size:2.5rem;' +
+      'color:#e7a5a9;">CHAPTER 10 IS HERE</div>';
+
+    if (countdownInterval) {
+      clearInterval(countdownInterval);
+    }
+
     return;
   }
 
-  const days =
-  Math.floor(difference/(1000*60*60*24));
+  const totalSeconds = Math.floor(difference / 1000);
 
-  const hours =
-  Math.floor((difference/(1000*60*60))%24);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
 
-  const minutes =
-  Math.floor((difference/(1000*60))%60);
+  countdownElements.days.textContent =
+    String(days).padStart(3, "0");
 
-  const seconds =
-  Math.floor((difference/1000)%60);
+  countdownElements.hours.textContent =
+    String(hours).padStart(2, "0");
 
-  document.getElementById("countdown").innerHTML =
-  `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  countdownElements.minutes.textContent =
+    String(minutes).padStart(2, "0");
+
+  countdownElements.seconds.textContent =
+    String(seconds).padStart(2, "0");
 }
 
 updateCountdown();
-setInterval(updateCountdown,1000);
-
-// AUDIO
-
-function playAudio(){
-  document.getElementById("audioPlayer").play();
-}
+countdownInterval = setInterval(updateCountdown, 1000);
 
 // SCROLL REVEAL
 
-const revealElements =
-document.querySelectorAll('.thought,.fan');
+const revealElements = document.querySelectorAll(".reveal");
 
-window.addEventListener('scroll',()=>{
-
-  revealElements.forEach(el=>{
-
-    const top =
-    el.getBoundingClientRect().top;
-
-    if(top < window.innerHeight - 50){
-      el.classList.add('show');
-    }
-
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12
   });
 
-});
+  revealElements.forEach((element) => {
+    observer.observe(element);
+  });
+} else {
+  revealElements.forEach((element) => {
+    element.classList.add("visible");
+  });
+}
 </script>
 
 </body>
